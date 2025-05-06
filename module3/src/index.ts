@@ -117,8 +117,29 @@ getAnimal(dog)
 
 
 }
+// access modifiers
+class BankAccount{
+  public readonly  id:number;
+   public name:string;
+ private   _balance:number;
+    constructor(id:number,name:string,_balance:number){
+        this.id=id
+        this._balance=_balance
+        this.name=name
+    }
+    addMoney(amount:number){
+return this._balance=this._balance + amount
+    }
+    getMoney(){
+return this._balance
+    }
+    
+}
 
 
+const user= new BankAccount(2007,'mr_x',20)
+user.addMoney(50)
+user.getMoney()
 
 
 
