@@ -170,9 +170,54 @@ user.getMoney()
 
 }
 
+// static in oop
+class Counter{
+  static  count:number =0;
+   
+    inc(){
+        return Counter.count=Counter.count+1
+    }
+    dec(){
+        return Counter.count =Counter.count -1
+    }
+}
+const instance1= new Counter()
+console.log(instance1)
+const instance2= new Counter()
+console.log(instance2)
+const instance3= new Counter()
+console.log(instance3)
+// polymorphism in oop 
+// Polymorphism in TypeScript OOP allows different classes to implement the same method in their own way through interfaces or inheritance. It helps in writing flexible and reusable code by treating objects of different classes as instances of a common superclass or interface.
+class Shape {
+    getArea():number{
+        return 0;
+    }
+}
 
-
-
+class Circle extends Shape{
+    radius:number;
+    constructor(radius:number){
+        super()
+        this.radius=radius
+    }
+    getArea(): number {
+        return Math.PI * this.radius * this.radius
+    }
+}
+class Rectangle extends Shape{
+    width:number;
+    height:number;
+    constructor(width:number,height:number){
+        super()
+        this.height=height
+        this.width = width
+    }
+    getArea(): number {
+        return this.width * this.height
+    }
+    // ^^^^ when changing a class methods value the parent class provide deferent value
+}
 
 
 
